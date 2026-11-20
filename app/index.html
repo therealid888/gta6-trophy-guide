@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Trophy Guide — GTA 6 · All 55 PS5 Trophies</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Grand Theft Auto VI · PlayStation 5</p>
+    <h1>Trophy Guide</h1>
+    <p class="tagline">Every one of the 55 trophies — official names, descriptions and grades, guides in our own words with their sources, a platinum roadmap, and a tracker that saves your progress.</p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="progress-text" id="progressText">Loading…</p>
+      <p class="grade-counts" id="gradeCounts"></p>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button id="tabChecklist" class="tab active" type="button">Checklist</button>
+  <button id="tabRoadmap" class="tab" type="button">Platinum Roadmap</button>
+</nav>
+
+<main>
+  <section id="checklistView">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+      <div class="filters" id="filters" role="group" aria-label="Filter by kind">
+        <button type="button" data-kind="all" class="filter active">All <span class="count" data-count="all"></span></button>
+        <button type="button" data-kind="story" class="filter">Story <span class="count" data-count="story"></span></button>
+        <button type="button" data-kind="missable" class="filter">Missable <span class="count" data-count="missable"></span></button>
+        <button type="button" data-kind="collectibles" class="filter">Collectibles <span class="count" data-count="collectibles"></span></button>
+        <button type="button" data-kind="activities" class="filter">Activities <span class="count" data-count="activities"></span></button>
+        <button type="button" data-kind="online" class="filter">Online <span class="count" data-count="online"></span></button>
+      </div>
+      <label class="spoiler">
+        <input id="spoilerToggle" type="checkbox" checked>
+        Spoiler-safe: hide hidden story trophies until earned
+      </label>
+      <div class="actions">
+        <button id="exportBtn" type="button">Export progress</button>
+        <button id="importBtn" type="button">Import progress</button>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
+        <button id="resetBtn" type="button">Reset</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="list-col">
+        <p class="missable-note">⚠ Exactly one trophy can be missed: <strong>Positive Mental Attitude</strong> — meditate at the Chapter 1 spot before you leave Chapter 1.</p>
+        <ul id="trophyList" class="trophy-list"></ul>
+        <p id="emptyState" class="empty" hidden>No trophies match. Try another filter or search.</p>
+      </div>
+      <aside class="detail-col">
+        <div id="detail" class="detail"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="roadmapView" hidden>
+    <div class="roadmap-intro">
+      <h2>Road to the Platinum</h2>
+      <p>Five stages, in order. The story stages cannot be missed; the one thing to watch is the Chapter 1 meditation spot in Stage 1. Everything else can be cleaned up after the story.</p>
+    </div>
+    <div id="roadmap" class="roadmap"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Guide text is written for this guide in our own words. Sources are named beside each trophy's guide. The app works fully offline — it loads nothing from the network. No Rockstar Games logo, artwork or fonts are used.</p>
+</footer>
+
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

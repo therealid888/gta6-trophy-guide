@@ -1,0 +1,131 @@
+:root {
+  --bg: #0e0716;
+  --panel: #1a0f28;
+  --panel-2: #221338;
+  --line: #3a2358;
+  --text: #f3eefb;
+  --muted: #b9a8d6;
+  --pink: #ff2d78;
+  --orange: #ff7a18;
+  --cyan: #22d3ee;
+  --gold: #fbbf24;
+  --silver: #cbd5e1;
+  --bronze: #e08a3c;
+  --platinum: #7dd3fc;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.hero {
+  background: linear-gradient(115deg, #2b0a4a 0%, #7a1042 45%, #c2410c 78%, #3b0764 100%);
+  border-bottom: 3px solid var(--pink);
+}
+.hero-inner { max-width: 1180px; margin: 0 auto; padding: 28px 20px 22px; }
+.eyebrow { margin: 0 0 4px; letter-spacing: 0.14em; text-transform: uppercase; font-size: 12px; color: #ffd9e8; }
+h1 { margin: 0; font-size: 44px; line-height: 1.05; letter-spacing: -0.01em; }
+.tagline { max-width: 760px; color: #ffe9f2; margin: 8px 0 16px; }
+.progress-wrap { max-width: 760px; }
+.progress-bar { height: 12px; background: rgba(0, 0, 0, 0.45); border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--cyan), var(--pink)); transition: width 0.25s ease; }
+.progress-text { margin: 8px 0 2px; font-weight: 700; }
+.grade-counts { margin: 0; font-size: 13px; color: #ffd9e8; }
+
+.tabs { display: flex; gap: 8px; max-width: 1180px; margin: 0 auto; padding: 14px 20px 0; }
+.tab {
+  background: var(--panel); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px 8px 0 0; padding: 9px 18px; font-size: 15px; cursor: pointer;
+}
+.tab.active { background: var(--panel-2); border-color: var(--pink); color: #fff; }
+
+main { max-width: 1180px; margin: 0 auto; padding: 16px 20px 32px; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+#search {
+  flex: 1 1 220px; padding: 9px 12px; font-size: 15px; color: var(--text);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+}
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filter {
+  background: var(--panel); color: var(--text); border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer;
+}
+.filter.active { background: var(--pink); border-color: var(--pink); color: #fff; }
+.filter .count { opacity: 0.85; font-size: 12px; }
+.spoiler { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); cursor: pointer; }
+.actions { display: flex; gap: 6px; margin-left: auto; }
+.actions button {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 12px; font-size: 13px; cursor: pointer;
+}
+.actions button:hover { border-color: var(--pink); }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr); gap: 18px; align-items: start; }
+.missable-note {
+  margin: 0 0 12px; padding: 10px 12px; background: #3a1503; border: 1px solid var(--orange);
+  border-radius: 8px; font-size: 14px;
+}
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.trophy {
+  display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: start;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+  cursor: pointer;
+}
+.trophy:hover { border-color: var(--pink); }
+.trophy.selected { border-color: var(--cyan); }
+.trophy.earned { border-color: #22c55e; }
+.trophy input { width: 18px; height: 18px; margin-top: 3px; accent-color: #22c55e; cursor: pointer; }
+.trophy-name { font-weight: 700; }
+.trophy-name.hidden-name { color: var(--muted); font-style: italic; }
+.trophy-desc { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.trophy-meta { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+.badge {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  border-radius: 999px; padding: 2px 8px; border: 1px solid var(--line); color: var(--muted);
+}
+.badge.platinum { color: var(--platinum); border-color: var(--platinum); }
+.badge.gold { color: var(--gold); border-color: var(--gold); }
+.badge.silver { color: var(--silver); border-color: var(--silver); }
+.badge.bronze { color: var(--bronze); border-color: var(--bronze); }
+.badge.missable { color: #fff; background: #b45309; border-color: #b45309; }
+.badge.hidden-badge { color: var(--cyan); border-color: var(--cyan); }
+.badge.kind { color: var(--text); }
+.earned-mark { color: #22c55e; font-weight: 700; font-size: 13px; white-space: nowrap; }
+.empty { color: var(--muted); }
+
+.detail {
+  position: sticky; top: 12px; background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px;
+}
+.detail h2 { margin: 0 0 4px; font-size: 21px; }
+.detail .official { font-size: 14px; color: var(--muted); margin: 0 0 10px; font-style: italic; }
+.detail h3 { margin: 14px 0 4px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); }
+.detail p { margin: 0; font-size: 15px; }
+.detail .sources { font-size: 13px; color: var(--muted); }
+.detail .guide-hidden { color: var(--muted); font-style: italic; }
+.detail-empty { color: var(--muted); }
+
+.roadmap-intro { max-width: 760px; margin-bottom: 16px; }
+.roadmap-intro h2 { margin: 0 0 6px; font-size: 26px; }
+.roadmap { display: grid; gap: 14px; }
+.stage { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.stage h3 { margin: 0 0 4px; font-size: 19px; }
+.stage h3 .stage-num { color: var(--pink); }
+.stage p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.stage ul { margin: 0; padding-left: 18px; }
+.stage li { margin: 3px 0; font-size: 14px; }
+.stage li .flag { color: var(--orange); font-weight: 700; }
+
+footer { max-width: 1180px; margin: 0 auto; padding: 0 20px 28px; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .detail { position: static; }
+  h1 { font-size: 34px; }
+}
